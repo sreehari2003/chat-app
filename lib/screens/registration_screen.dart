@@ -102,7 +102,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
               ),
               const SizedBox(
-                height: 24.0,
+                height: 20.0,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -122,6 +122,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         Navigator.pushNamed(context, "/chat");
                       } catch (e) {
                         //handle error
+
                       } finally {
                         setState(() {
                           load = false;
@@ -142,5 +143,25 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         ),
       ),
     );
+  }
+}
+
+class ErrorLog extends StatelessWidget {
+  final isError;
+  const ErrorLog({Key? key, this.isError}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (isError) {
+      return Container(
+        margin: EdgeInsets.all(10),
+        child: const Text(
+          "Invalid email or password",
+          style: TextStyle(color: Colors.red),
+        ),
+      );
+    } else {
+      return Container();
+    }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "package:firebase_auth/firebase_auth.dart";
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import "./registration_screen.dart";
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -8,6 +9,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool error = false;
   bool load = false;
   // ignore: prefer_typing_uninitialized_variables
   var email;
@@ -97,6 +99,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
+              ErrorLog(
+                isError: error,
+              ),
               const SizedBox(
                 height: 24.0,
               ),
@@ -113,11 +118,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         load = true;
                       });
                       try {
+                        setState(() {
+                          error = false;
+                        });
                         await _auth.signInWithEmailAndPassword(
                             email: email, password: password);
                         Navigator.pushNamed(context, "/chat");
                       } catch (e) {
                         // print(e);
+                        setState(() {
+                          error = true;
+                        });
                       } finally {
                         setState(() {
                           load = false;
