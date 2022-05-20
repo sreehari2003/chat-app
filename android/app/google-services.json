@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "869738199243",
+    "project_id": "chat-app-9261d",
+    "storage_bucket": "chat-app-9261d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869738199243:android:81fc3026a3033b6eec434e",
+        "android_client_info": {
+          "package_name": "com.sreehari_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869738199243-lm343207q3f8bhom4esjbdk4tt3h4her.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArZFq2V4DJCGOpPBwfvibTdHUObU6ATzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869738199243-lm343207q3f8bhom4esjbdk4tt3h4her.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
