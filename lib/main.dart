@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import './screens/welcome_screen.dart';
-import './screens/login_screen.dart';
-import './screens/registration_screen.dart';
-import './screens/chat_screen.dart';
+import 'package:chat/screens/welcome_screen.dart';
+import 'package:chat/screens/login_screen.dart';
+import 'package:chat/screens/registration_screen.dart';
+import 'package:chat/screens/chat_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +18,11 @@ class FlashChat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+      ),
+    );
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
         textTheme: const TextTheme(
