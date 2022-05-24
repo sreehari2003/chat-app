@@ -17,6 +17,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text("register"),
       ),
@@ -32,7 +33,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               Hero(
                 tag: "logo",
                 child: SizedBox(
-                  height: 200.0,
+                  height: 150.0,
                   child: Image.network(
                       "https://raw.githubusercontent.com/londonappbrewery/flash-chat-flutter/master/images/logo.png"),
                 ),

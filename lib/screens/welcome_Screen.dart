@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import "./login_screen.dart";
-import "./registration_Screen.dart";
+import "package:chat/screens/login_screen.dart";
+import "package:chat/screens/registration_Screen.dart";
+import "package:firebase_auth/firebase_auth.dart";
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -10,6 +11,27 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  var loggedUSer;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future getCurrentUser() async {
+    try {
+      final user = _auth.currentUser;
+      loggedUSer = user;
+      if (loggedUSer != null) {
+        Navigator.pushNamed(context, "/chat");
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

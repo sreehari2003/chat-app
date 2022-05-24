@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import "package:firebase_auth/firebase_auth.dart";
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import "./registration_screen.dart";
+import "package:chat/screens/registration_screen.dart";
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -19,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text("login"),
       ),
@@ -34,13 +35,13 @@ class _LoginScreenState extends State<LoginScreen> {
               Hero(
                 tag: "logo",
                 child: SizedBox(
-                  height: 200.0,
+                  height: 150.0,
                   child: Image.network(
                       "https://raw.githubusercontent.com/londonappbrewery/flash-chat-flutter/master/images/logo.png"),
                 ),
               ),
               const SizedBox(
-                height: 48.0,
+                height: 40.0,
               ),
               TextField(
                 onChanged: (value) {
